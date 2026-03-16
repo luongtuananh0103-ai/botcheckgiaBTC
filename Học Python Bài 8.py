@@ -1,0 +1,8 @@
+name=input("Nhập tên của bạn tại đây: ")
+age=input("Nhập tuổi của bạn tại đây: ")
+print("Xin chào " +name + ", bạn " + age + " tuổi")
+experience=input("Bạn có kinh nghiệm lập trình Python không? (có/không): ")
+num1=input("Nhập số thứ nhất: ")
+num2=input("Nhập số thứ hai: ")
+sum=int(num1)+int(num2)
+print("Tổng của " + num1 + " và " + num2 + " là: " + str(sum))

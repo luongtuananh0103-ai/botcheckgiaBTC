@@ -1,0 +1,815 @@
+[
+    {
+        "label": "ccxt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ccxt",
+        "description": "ccxt",
+        "detail": "ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Update",
+        "importPath": "telegram",
+        "description": "telegram",
+        "isExtraImport": true,
+        "detail": "telegram",
+        "documentation": {}
+    },
+    {
+        "label": "Update",
+        "importPath": "telegram",
+        "description": "telegram",
+        "isExtraImport": true,
+        "detail": "telegram",
+        "documentation": {}
+    },
+    {
+        "label": "Application",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "CommandHandler",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "ContextTypes",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "Application",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "CommandHandler",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "ContextTypes",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "mplfinance",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mplfinance",
+        "description": "mplfinance",
+        "detail": "mplfinance",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "matrix",
+        "kind": 5,
+        "importPath": "2D_Array",
+        "description": "2D_Array",
+        "peekOfCode": "matrix = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9]\n]\nfor row in matrix:\n    print(row)",
+        "detail": "2D_Array",
+        "documentation": {}
+    },
+    {
+        "label": "get_ticker",
+        "kind": 2,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "def get_ticker(symbol):\n    try:\n        t = exchange.fetch_ticker(symbol)\n        return {\n            \"price\":  t[\"last\"],\n            \"high\":   t[\"high\"],\n            \"low\":    t[\"low\"],\n            \"change\": t[\"percentage\"] or 0,\n            \"volume\": t[\"baseVolume\"],\n        }",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "get_signal",
+        "kind": 2,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "def get_signal(price):\n    state[\"price_history\"].append(price)\n    if len(state[\"price_history\"]) > 100:\n        state[\"price_history\"].pop(0)\n    history = state[\"price_history\"]\n    if len(history) < 5:\n        return \"Chua du du lieu\"\n    avg = sum(history[-5:]) / 5\n    if price > avg * 1.002:\n        return \"BUY SIGNAL\"",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "format_message",
+        "kind": 2,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "def format_message(data, signal):\n    symbol = state[\"symbol\"]\n    arrow  = \"🔺\" if data[\"change\"] >= 0 else \"🔻\"\n    now    = datetime.now().strftime(\"%H:%M:%S %d/%m/%Y\")\n    return (\n        f\"🤖 *BTC PRICE BOT*\\n\"\n        f\"━━━━━━━━━━━━━━━━━━━\\n\"\n        f\"💰 *{symbol}*: `${data['price']:,.2f}`\\n\"\n        f\"{arrow} Thay doi 24h: `{data['change']:+.2f}%`\\n\"\n        f\"📈 Cao nhat: `${data['high']:,.2f}`\\n\"",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "def main():\n    print(\"Bot dang khoi dong...\")\n    app = Application.builder().token(TOKEN).build()\n    app.add_handler(CommandHandler(\"start\",      cmd_start))\n    app.add_handler(CommandHandler(\"price\",      cmd_price))\n    app.add_handler(CommandHandler(\"start_auto\", cmd_start_auto))\n    app.add_handler(CommandHandler(\"stop_auto\",  cmd_stop_auto))\n    app.add_handler(CommandHandler(\"symbol\",     cmd_symbol))\n    app.add_handler(CommandHandler(\"alert\",      cmd_alert))\n    app.add_handler(CommandHandler(\"status\",     cmd_status))",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "CHAT_ID",
+        "kind": 5,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "CHAT_ID = os.getenv(\"TELEGRAM_CHAT_ID\")\nexchange = ccxt.binance()\n# ─── LƯU TRẠNG THÁI BOT ─────────────────────────────────────\nstate = {\n    \"is_running\":    False,\n    \"symbol\":        \"BTC/USDT\",\n    \"interval\":      10,\n    \"alert_pct\":     2.0,\n    \"price_history\": [],\n    \"last_price\":    None,",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "exchange = ccxt.binance()\n# ─── LƯU TRẠNG THÁI BOT ─────────────────────────────────────\nstate = {\n    \"is_running\":    False,\n    \"symbol\":        \"BTC/USDT\",\n    \"interval\":      10,\n    \"alert_pct\":     2.0,\n    \"price_history\": [],\n    \"last_price\":    None,\n    \"task\":          None,",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "Bottelegram",
+        "description": "Bottelegram",
+        "peekOfCode": "state = {\n    \"is_running\":    False,\n    \"symbol\":        \"BTC/USDT\",\n    \"interval\":      10,\n    \"alert_pct\":     2.0,\n    \"price_history\": [],\n    \"last_price\":    None,\n    \"task\":          None,\n}\n# ─── HÀM LẤY GIÁ ────────────────────────────────────────────",
+        "detail": "Bottelegram",
+        "documentation": {}
+    },
+    {
+        "label": "secret_word",
+        "kind": 5,
+        "importPath": "Bài 20- Trò chơi đoán từ",
+        "description": "Bài 20- Trò chơi đoán từ",
+        "peekOfCode": "secret_word = \"python\"\nhint = \"Đây là một ngôn ngữ lập trình phổ biến\"\nguess = \"\"\nguess_count = 0\nguess_limit = 3\nwhile guess != secret_word:\n    if guess_count < guess_limit:\n        guess = input(\"Hãy đoán từ gì \")\n        guess_count +=1\n    else:",
+        "detail": "Bài 20- Trò chơi đoán từ",
+        "documentation": {}
+    },
+    {
+        "label": "hint",
+        "kind": 5,
+        "importPath": "Bài 20- Trò chơi đoán từ",
+        "description": "Bài 20- Trò chơi đoán từ",
+        "peekOfCode": "hint = \"Đây là một ngôn ngữ lập trình phổ biến\"\nguess = \"\"\nguess_count = 0\nguess_limit = 3\nwhile guess != secret_word:\n    if guess_count < guess_limit:\n        guess = input(\"Hãy đoán từ gì \")\n        guess_count +=1\n    else:\n        break ",
+        "detail": "Bài 20- Trò chơi đoán từ",
+        "documentation": {}
+    },
+    {
+        "label": "guess",
+        "kind": 5,
+        "importPath": "Bài 20- Trò chơi đoán từ",
+        "description": "Bài 20- Trò chơi đoán từ",
+        "peekOfCode": "guess = \"\"\nguess_count = 0\nguess_limit = 3\nwhile guess != secret_word:\n    if guess_count < guess_limit:\n        guess = input(\"Hãy đoán từ gì \")\n        guess_count +=1\n    else:\n        break \nif guess == secret_word:",
+        "detail": "Bài 20- Trò chơi đoán từ",
+        "documentation": {}
+    },
+    {
+        "label": "guess_count",
+        "kind": 5,
+        "importPath": "Bài 20- Trò chơi đoán từ",
+        "description": "Bài 20- Trò chơi đoán từ",
+        "peekOfCode": "guess_count = 0\nguess_limit = 3\nwhile guess != secret_word:\n    if guess_count < guess_limit:\n        guess = input(\"Hãy đoán từ gì \")\n        guess_count +=1\n    else:\n        break \nif guess == secret_word:\n    print(\" CHÚC MỪNG BẠN ĐÃ ĐOÁN ĐÚNG\")",
+        "detail": "Bài 20- Trò chơi đoán từ",
+        "documentation": {}
+    },
+    {
+        "label": "guess_limit",
+        "kind": 5,
+        "importPath": "Bài 20- Trò chơi đoán từ",
+        "description": "Bài 20- Trò chơi đoán từ",
+        "peekOfCode": "guess_limit = 3\nwhile guess != secret_word:\n    if guess_count < guess_limit:\n        guess = input(\"Hãy đoán từ gì \")\n        guess_count +=1\n    else:\n        break \nif guess == secret_word:\n    print(\" CHÚC MỪNG BẠN ĐÃ ĐOÁN ĐÚNG\")\nelse:",
+        "detail": "Bài 20- Trò chơi đoán từ",
+        "documentation": {}
+    },
+    {
+        "label": "num1",
+        "kind": 5,
+        "importPath": "Calculator",
+        "description": "Calculator",
+        "peekOfCode": "num1 = float(input(\"Nhập số thứ nhất: \"))\nnum2 = float(input(\"Nhập số thứ hai: \"))\noperator = input(\"Nhập phép toán (+, -, *, /): \")\ntry:\n    if operator == \"+\":\n        print(num1 + num2)\n    elif operator == \"-\":\n        print(num1 - num2)\n    elif operator == \"*\":\n        print(num1 * num2)",
+        "detail": "Calculator",
+        "documentation": {}
+    },
+    {
+        "label": "num2",
+        "kind": 5,
+        "importPath": "Calculator",
+        "description": "Calculator",
+        "peekOfCode": "num2 = float(input(\"Nhập số thứ hai: \"))\noperator = input(\"Nhập phép toán (+, -, *, /): \")\ntry:\n    if operator == \"+\":\n        print(num1 + num2)\n    elif operator == \"-\":\n        print(num1 - num2)\n    elif operator == \"*\":\n        print(num1 * num2)\n    elif operator == \"/\":",
+        "detail": "Calculator",
+        "documentation": {}
+    },
+    {
+        "label": "operator",
+        "kind": 5,
+        "importPath": "Calculator",
+        "description": "Calculator",
+        "peekOfCode": "operator = input(\"Nhập phép toán (+, -, *, /): \")\ntry:\n    if operator == \"+\":\n        print(num1 + num2)\n    elif operator == \"-\":\n        print(num1 - num2)\n    elif operator == \"*\":\n        print(num1 * num2)\n    elif operator == \"/\":\n        if num2 != 0:",
+        "detail": "Calculator",
+        "documentation": {}
+    },
+    {
+        "label": "check_gia",
+        "kind": 2,
+        "importPath": "check_gia_btc_eth",
+        "description": "check_gia_btc_eth",
+        "peekOfCode": "def check_gia():\n    coins = ['BTC/USDT', 'ETH/USDT']\n    print(f\"\\n[{time.strftime('%H:%M:%S')}] --- GIÁ TRÊN BINANCE ---\")\n    for coin in coins:\n        ticker = exchange.fetch_ticker(coin)\n        gia = ticker['last']\n        thay_doi = ticker['percentage']  # % thay đổi 24h\n        cao_nhat = ticker['high']\n        thap_nhat = ticker['low']\n        dau = \"+\" if thay_doi >= 0 else \"\"",
+        "detail": "check_gia_btc_eth",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "check_gia_btc_eth",
+        "description": "check_gia_btc_eth",
+        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\ndef check_gia():\n    coins = ['BTC/USDT', 'ETH/USDT']\n    print(f\"\\n[{time.strftime('%H:%M:%S')}] --- GIÁ TRÊN BINANCE ---\")\n    for coin in coins:\n        ticker = exchange.fetch_ticker(coin)\n        gia = ticker['last']\n        thay_doi = ticker['percentage']  # % thay đổi 24h\n        cao_nhat = ticker['high']\n        thap_nhat = ticker['low']",
+        "detail": "check_gia_btc_eth",
+        "documentation": {}
+    },
+    {
+        "label": "English_vietnamese_dictionary",
+        "kind": 5,
+        "importPath": "Dictionary",
+        "description": "Dictionary",
+        "peekOfCode": "English_vietnamese_dictionary = {\n    \"hello\" : \"xin chào\",\n    \"fuck\" : \"địt mẹ\",\n    \"try\" : \"thử\",\n    \"school\" : \"trường học\",\n    \"university\" : \"đại học\",\n    \"pussy\" : \"lồn\",\n    \"cock\" : \"cặc\",\n    \"cat\" : \"con mèo\",\n    \"elephant\" : \"con voi\",",
+        "detail": "Dictionary",
+        "documentation": {}
+    },
+    {
+        "label": "i",
+        "kind": 5,
+        "importPath": "For",
+        "description": "For",
+        "peekOfCode": "i = 1\nwhile i<=10:\n    if i == 1:\n        print(\"Đây là phần tử đầu tiên trong mảng\")\n    elif i == 2:\n        print(\" Đây là phần tử thứ hai trong mảng\")\n    else:\n        print(f\" Đây là phần tử thứ {i} trong mảng\")\n    i +=1",
+        "detail": "For",
+        "documentation": {}
+    },
+    {
+        "label": "get_crypto_price",
+        "kind": 2,
+        "importPath": "import ccxt",
+        "description": "import ccxt",
+        "peekOfCode": "def get_crypto_price(symbol):\n    try:\n        # 2. Lấy thông tin thị trường (ticker) của cặp tiền\n        ticker = exchange.fetch_ticker(symbol)\n        # 3. Trích xuất giá hiện tại (last price)\n        current_price = ticker['last']\n        timestamp = ticker['datetime']\n        return current_price, timestamp\n    except Exception as e:\n        return None, str(e)",
+        "detail": "import ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "import ccxt",
+        "description": "import ccxt",
+        "peekOfCode": "exchange = ccxt.binance()\ndef get_crypto_price(symbol):\n    try:\n        # 2. Lấy thông tin thị trường (ticker) của cặp tiền\n        ticker = exchange.fetch_ticker(symbol)\n        # 3. Trích xuất giá hiện tại (last price)\n        current_price = ticker['last']\n        timestamp = ticker['datetime']\n        return current_price, timestamp\n    except Exception as e:",
+        "detail": "import ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "symbol",
+        "kind": 5,
+        "importPath": "import ccxt",
+        "description": "import ccxt",
+        "peekOfCode": "symbol = 'BTC/USDT'\nprint(f\"--- Đang theo dõi giá {symbol} ---\")\nwhile True:\n    price, info = get_crypto_price(symbol)\n    if price:\n        print(f\"[{info}] Giá {symbol}: {price} USDT\")\n    else:\n        print(f\"Lỗi: {info}\")\n    time.sleep(5) # Nghỉ 2 giây trước khi lấy giá mới",
+        "detail": "import ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "list",
+        "description": "list",
+        "peekOfCode": "a = 200\nb = 50\nif a < b:\n    print(\"a nhỏ hơn b\")\nelif a > b:\n    print(\"a lớn hơn b\")",
+        "detail": "list",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "list",
+        "description": "list",
+        "peekOfCode": "b = 50\nif a < b:\n    print(\"a nhỏ hơn b\")\nelif a > b:\n    print(\"a lớn hơn b\")",
+        "detail": "list",
+        "documentation": {}
+    },
+    {
+        "label": "student_names",
+        "kind": 5,
+        "importPath": "List_function",
+        "description": "List_function",
+        "peekOfCode": "student_names = [\"Alice\", \"Bob\", \"Charlie\", \"David\", \"Eve\"]\nmath_scores = [85, 92, 78, 90, 88]\nmath_scores.reverse()\nprint(\"Student Names:\", student_names)\nprint(math_scores)\nstudent_names.insert(3, \"Frank\")\nstudent_names.remove(\"Alice\")\nprint(\"Updated Student Names:\", student_names)",
+        "detail": "List_function",
+        "documentation": {}
+    },
+    {
+        "label": "math_scores",
+        "kind": 5,
+        "importPath": "List_function",
+        "description": "List_function",
+        "peekOfCode": "math_scores = [85, 92, 78, 90, 88]\nmath_scores.reverse()\nprint(\"Student Names:\", student_names)\nprint(math_scores)\nstudent_names.insert(3, \"Frank\")\nstudent_names.remove(\"Alice\")\nprint(\"Updated Student Names:\", student_names)",
+        "detail": "List_function",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_prices",
+        "kind": 2,
+        "importPath": "Luyện viết bot lần 2",
+        "description": "Luyện viết bot lần 2",
+        "peekOfCode": "def initialize_prices():\n    print(\"--- Thiết lập giá gốc ---\")\n    for coin in watchlist:\n        ticker = exchange.fetch_ticker(coin)\n        base_prices[coin] = ticker['last']\n    print(\"Đã xong!\")\n    # Vòng lặp chính\n    initialize_prices()\nwhile True:\n    try:",
+        "detail": "Luyện viết bot lần 2",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "Luyện viết bot lần 2",
+        "description": "Luyện viết bot lần 2",
+        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\n# Danh sách cặp tiền tệ cần theo dõi\nwatchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\n#Lưu giá gốc để làm giá tham chiếu và tính biến động\nbase_prices = {}\ndef initialize_prices():\n    print(\"--- Thiết lập giá gốc ---\")\n    for coin in watchlist:\n        ticker = exchange.fetch_ticker(coin)\n        base_prices[coin] = ticker['last']",
+        "detail": "Luyện viết bot lần 2",
+        "documentation": {}
+    },
+    {
+        "label": "watchlist",
+        "kind": 5,
+        "importPath": "Luyện viết bot lần 2",
+        "description": "Luyện viết bot lần 2",
+        "peekOfCode": "watchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\n#Lưu giá gốc để làm giá tham chiếu và tính biến động\nbase_prices = {}\ndef initialize_prices():\n    print(\"--- Thiết lập giá gốc ---\")\n    for coin in watchlist:\n        ticker = exchange.fetch_ticker(coin)\n        base_prices[coin] = ticker['last']\n    print(\"Đã xong!\")\n    # Vòng lặp chính",
+        "detail": "Luyện viết bot lần 2",
+        "documentation": {}
+    },
+    {
+        "label": "base_prices",
+        "kind": 5,
+        "importPath": "Luyện viết bot lần 2",
+        "description": "Luyện viết bot lần 2",
+        "peekOfCode": "base_prices = {}\ndef initialize_prices():\n    print(\"--- Thiết lập giá gốc ---\")\n    for coin in watchlist:\n        ticker = exchange.fetch_ticker(coin)\n        base_prices[coin] = ticker['last']\n    print(\"Đã xong!\")\n    # Vòng lặp chính\n    initialize_prices()\nwhile True:",
+        "detail": "Luyện viết bot lần 2",
+        "documentation": {}
+    },
+    {
+        "label": "ve_chart_nen",
+        "kind": 2,
+        "importPath": "Luyện viết bot lần 3",
+        "description": "Luyện viết bot lần 3",
+        "peekOfCode": "def ve_chart_nen(coin):\n    \"\"\"Lấy 100 nến 15 phút và vẽ chart\"\"\"\n    ohlcv = exchange.fetch_ohlcv(coin, timeframe='15m', limit=100)\n    df = pd.DataFrame(ohlcv, columns=['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])\n    df['Date'] = pd.to_datetime(df['Date'], unit='ms')\n    df.set_index('Date', inplace=True)\n    mpf.plot(df, type='candle', style='charles', title=f'{coin} - 15 phút',\n             ylabel='Giá (USDT)', volume=True, show_nontrading=False)\ndef initialize_prizes():\n    print('--- Thiết lập giá gốc cho các đồng coin ---')",
+        "detail": "Luyện viết bot lần 3",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_prizes",
+        "kind": 2,
+        "importPath": "Luyện viết bot lần 3",
+        "description": "Luyện viết bot lần 3",
+        "peekOfCode": "def initialize_prizes():\n    print('--- Thiết lập giá gốc cho các đồng coin ---')\n    for coin in watchlist:\n        ticker = exchange.fetch_ticker(coin)\n        base_prices[coin] = ticker['last']\n    print('--- Đã thiết lập giá gốc ---')\n# Vòng lặp chính của chương trình\ninitialize_prizes()\nfor coin in watchlist:\n    ve_chart_nen(coin)",
+        "detail": "Luyện viết bot lần 3",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "Luyện viết bot lần 3",
+        "description": "Luyện viết bot lần 3",
+        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\n#Danh sách các đồng tiền điện tử cần theo dõi\nwatchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT', 'AVAX/USDT']\n# Lưu giá gốc để làm giá tham chiếu để tính biến động\nbase_prices = {}\ndef ve_chart_nen(coin):\n    \"\"\"Lấy 100 nến 15 phút và vẽ chart\"\"\"\n    ohlcv = exchange.fetch_ohlcv(coin, timeframe='15m', limit=100)\n    df = pd.DataFrame(ohlcv, columns=['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])\n    df['Date'] = pd.to_datetime(df['Date'], unit='ms')",
+        "detail": "Luyện viết bot lần 3",
+        "documentation": {}
+    },
+    {
+        "label": "watchlist",
+        "kind": 5,
+        "importPath": "Luyện viết bot lần 3",
+        "description": "Luyện viết bot lần 3",
+        "peekOfCode": "watchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT', 'AVAX/USDT']\n# Lưu giá gốc để làm giá tham chiếu để tính biến động\nbase_prices = {}\ndef ve_chart_nen(coin):\n    \"\"\"Lấy 100 nến 15 phút và vẽ chart\"\"\"\n    ohlcv = exchange.fetch_ohlcv(coin, timeframe='15m', limit=100)\n    df = pd.DataFrame(ohlcv, columns=['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])\n    df['Date'] = pd.to_datetime(df['Date'], unit='ms')\n    df.set_index('Date', inplace=True)\n    mpf.plot(df, type='candle', style='charles', title=f'{coin} - 15 phút',",
+        "detail": "Luyện viết bot lần 3",
+        "documentation": {}
+    },
+    {
+        "label": "base_prices",
+        "kind": 5,
+        "importPath": "Luyện viết bot lần 3",
+        "description": "Luyện viết bot lần 3",
+        "peekOfCode": "base_prices = {}\ndef ve_chart_nen(coin):\n    \"\"\"Lấy 100 nến 15 phút và vẽ chart\"\"\"\n    ohlcv = exchange.fetch_ohlcv(coin, timeframe='15m', limit=100)\n    df = pd.DataFrame(ohlcv, columns=['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])\n    df['Date'] = pd.to_datetime(df['Date'], unit='ms')\n    df.set_index('Date', inplace=True)\n    mpf.plot(df, type='candle', style='charles', title=f'{coin} - 15 phút',\n             ylabel='Giá (USDT)', volume=True, show_nontrading=False)\ndef initialize_prizes():",
+        "detail": "Luyện viết bot lần 3",
+        "documentation": {}
+    },
+    {
+        "label": "get_crypto_price",
+        "kind": 2,
+        "importPath": "Lấy giá BTC qua Claude",
+        "description": "Lấy giá BTC qua Claude",
+        "peekOfCode": "def get_crypto_price(symbol):\n    try:\n        # 2. Lấy thông tin thị trường (ticker) của cặp tiền\n        ticker = exchange.fetch_ticker(symbol)\n        # 3. Trích xuất giá hiện tại (last price)\n        current_price = ticker['last']\n        timestamp = ticker['datetime']\n        return current_price, timestamp\n    except Exception as e:\n        return None, str(e)",
+        "detail": "Lấy giá BTC qua Claude",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "Lấy giá BTC qua Claude",
+        "description": "Lấy giá BTC qua Claude",
+        "peekOfCode": "exchange = ccxt.binance()\ndef get_crypto_price(symbol):\n    try:\n        # 2. Lấy thông tin thị trường (ticker) của cặp tiền\n        ticker = exchange.fetch_ticker(symbol)\n        # 3. Trích xuất giá hiện tại (last price)\n        current_price = ticker['last']\n        timestamp = ticker['datetime']\n        return current_price, timestamp\n    except Exception as e:",
+        "detail": "Lấy giá BTC qua Claude",
+        "documentation": {}
+    },
+    {
+        "label": "symbol",
+        "kind": 5,
+        "importPath": "Lấy giá BTC qua Claude",
+        "description": "Lấy giá BTC qua Claude",
+        "peekOfCode": "symbol = 'BTC/USDT'\nprint(f\"--- Đang theo dõi giá {symbol} ---\")\nwhile True:\n    price, info = get_crypto_price(symbol)\n    if price:\n        print(f\"[{info}] Giá {symbol}: {price} USDT\")\n    else:\n        print(f\"Lỗi: {info}\")\n    time.sleep(2) # Nghỉ 2 giây trước khi lấy giá mới",
+        "detail": "Lấy giá BTC qua Claude",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_prices",
+        "kind": 2,
+        "importPath": "Lấy giá BTC ver2",
+        "description": "Lấy giá BTC ver2",
+        "peekOfCode": "def initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")\n        except ccxt.NetworkError:                         # ← Lỗi mạng\n            print(f\"Lỗi mạng khi lấy giá {coin}, thử lại...\")",
+        "detail": "Lấy giá BTC ver2",
+        "documentation": {}
+    },
+    {
+        "label": "check_alert",
+        "kind": 2,
+        "importPath": "Lấy giá BTC ver2",
+        "description": "Lấy giá BTC ver2",
+        "peekOfCode": "def check_alert(symbol, current_price):\n    \"\"\"Hàm tính toán % thay đổi và đưa ra cảnh báo\"\"\"\n    base_price = base_prices[symbol]\n    # Công thức tính % thay đổi: ((Giá mới - Giá cũ) / Giá cũ) * 100\n    change_pct = ((current_price - base_price) / base_price) * 100\n    if abs(change_pct) >= 3:\n        status = \"🚀 TĂNG\" if change_pct > 0 else \"🔥 GIẢM\"\n        print(f\"⚠️ CẢNH BÁO: {symbol} đang {status} {change_pct:.2f}% (Giá gốc: {base_price})\")\n    else:\n        print(f\"{symbol}: {current_price} (Biến động: {change_pct:.2f}%)\")",
+        "detail": "Lấy giá BTC ver2",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "Lấy giá BTC ver2",
+        "description": "Lấy giá BTC ver2",
+        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\n# 1. Danh sách theo dõi và lưu giá gốc (Mốc so sánh)\nwatchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)",
+        "detail": "Lấy giá BTC ver2",
+        "documentation": {}
+    },
+    {
+        "label": "watchlist",
+        "kind": 5,
+        "importPath": "Lấy giá BTC ver2",
+        "description": "Lấy giá BTC ver2",
+        "peekOfCode": "watchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")",
+        "detail": "Lấy giá BTC ver2",
+        "documentation": {}
+    },
+    {
+        "label": "base_prices",
+        "kind": 5,
+        "importPath": "Lấy giá BTC ver2",
+        "description": "Lấy giá BTC ver2",
+        "peekOfCode": "base_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")\n        except ccxt.NetworkError:                         # ← Lỗi mạng",
+        "detail": "Lấy giá BTC ver2",
+        "documentation": {}
+    },
+    {
+        "label": "my_age",
+        "kind": 5,
+        "importPath": "my_age=35",
+        "description": "my_age=35",
+        "peekOfCode": "my_age = 35\nmy_wife_age = 27\ntext = \"Năm nay tôi {} tuổi, vợ tôi {} tuổi.\" \nprint(text.format(my_age, my_wife_age))",
+        "detail": "my_age=35",
+        "documentation": {}
+    },
+    {
+        "label": "my_wife_age",
+        "kind": 5,
+        "importPath": "my_age=35",
+        "description": "my_age=35",
+        "peekOfCode": "my_wife_age = 27\ntext = \"Năm nay tôi {} tuổi, vợ tôi {} tuổi.\" \nprint(text.format(my_age, my_wife_age))",
+        "detail": "my_age=35",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "my_age=35",
+        "description": "my_age=35",
+        "peekOfCode": "text = \"Năm nay tôi {} tuổi, vợ tôi {} tuổi.\" \nprint(text.format(my_age, my_wife_age))",
+        "detail": "my_age=35",
+        "documentation": {}
+    },
+    {
+        "label": "get_crypto_price",
+        "kind": 2,
+        "importPath": "test bot",
+        "description": "test bot",
+        "peekOfCode": "def get_crypto_price(symbol):\n    try:\n        ticker = exchange.fetch_ticker(symbol)\n        return {\n            \"price\":   ticker[\"last\"],           # Giá hiện tại\n            \"high\":    ticker[\"high\"],            # Cao nhất 24h\n            \"low\":     ticker[\"low\"],             # Thấp nhất 24h\n            \"change\":  ticker[\"percentage\"],      # % thay đổi 24h\n            \"volume\":  ticker[\"baseVolume\"],      # Volume 24h\n            \"time\":    ticker[\"datetime\"]",
+        "detail": "test bot",
+        "documentation": {}
+    },
+    {
+        "label": "get_signal",
+        "kind": 2,
+        "importPath": "test bot",
+        "description": "test bot",
+        "peekOfCode": "def get_signal(price):\n    price_history.append(price)\n    if len(price_history) < 5:\n        return \"⏳ CHỜTHÊM DỮ LIỆU\"\n    recent = price_history[-5:]       # 5 giá gần nhất\n    avg    = sum(recent) / len(recent)\n    if price > avg * 1.002:           # Giá > MA5 + 0.2%\n        return \"🟢 BUY SIGNAL\"\n    elif price < avg * 0.998:         # Giá < MA5 - 0.2%\n        return \"🔴 SELL SIGNAL\"",
+        "detail": "test bot",
+        "documentation": {}
+    },
+    {
+        "label": "format_display",
+        "kind": 2,
+        "importPath": "test bot",
+        "description": "test bot",
+        "peekOfCode": "def format_display(symbol, data, signal, prev_price):\n    now    = datetime.now().strftime(\"%H:%M:%S\")\n    price  = data[\"price\"]\n    change = data[\"change\"] or 0\n    # So sánh với giá trước để hiện mũi tên\n    if prev_price is None:\n        arrow = \"  \"\n    elif price > prev_price:\n        arrow = \"▲\"\n    elif price < prev_price:",
+        "detail": "test bot",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "test bot",
+        "description": "test bot",
+        "peekOfCode": "exchange = ccxt.binance()\n# ─── 2. HÀM LẤY GIÁ (giữ nguyên logic của bạn, thêm chi tiết) ──\ndef get_crypto_price(symbol):\n    try:\n        ticker = exchange.fetch_ticker(symbol)\n        return {\n            \"price\":   ticker[\"last\"],           # Giá hiện tại\n            \"high\":    ticker[\"high\"],            # Cao nhất 24h\n            \"low\":     ticker[\"low\"],             # Thấp nhất 24h\n            \"change\":  ticker[\"percentage\"],      # % thay đổi 24h",
+        "detail": "test bot",
+        "documentation": {}
+    },
+    {
+        "label": "price_history",
+        "kind": 5,
+        "importPath": "test bot",
+        "description": "test bot",
+        "peekOfCode": "price_history = []   # Lưu lịch sử giá để so sánh\ndef get_signal(price):\n    price_history.append(price)\n    if len(price_history) < 5:\n        return \"⏳ CHỜTHÊM DỮ LIỆU\"\n    recent = price_history[-5:]       # 5 giá gần nhất\n    avg    = sum(recent) / len(recent)\n    if price > avg * 1.002:           # Giá > MA5 + 0.2%\n        return \"🟢 BUY SIGNAL\"\n    elif price < avg * 0.998:         # Giá < MA5 - 0.2%",
+        "detail": "test bot",
+        "documentation": {}
+    },
+    {
+        "label": "prev_price",
+        "kind": 5,
+        "importPath": "test bot",
+        "description": "test bot",
+        "peekOfCode": "prev_price = None\ninterval   = 2      # Giây giữa mỗi lần lấy giá\ncount      = 0\nprint(f\"🚀 Bot khởi động — Đang theo dõi {symbol}...\")\nprint(\"   Nhấn Ctrl+C để dừng\\n\")\nwhile True:\n    try:\n        data = get_crypto_price(symbol)\n        if data:\n            count += 1",
+        "detail": "test bot",
+        "documentation": {}
+    },
+    {
+        "label": "get_ticker",
+        "kind": 2,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "def get_ticker(symbol):\n    try:\n        t = exchange.fetch_ticker(symbol)\n        return {\n            \"price\":  t[\"last\"],\n            \"high\":   t[\"high\"],\n            \"low\":    t[\"low\"],\n            \"change\": t[\"percentage\"] or 0,\n            \"volume\": t[\"baseVolume\"],\n        }",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "get_signal",
+        "kind": 2,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "def get_signal(price):\n    state[\"price_history\"].append(price)\n    if len(state[\"price_history\"]) > 100:\n        state[\"price_history\"].pop(0)\n    history = state[\"price_history\"]\n    if len(history) < 5:\n        return \"Chua du du lieu\"\n    avg = sum(history[-5:]) / 5\n    if price > avg * 1.002:\n        return \"BUY SIGNAL\"",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "format_message",
+        "kind": 2,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "def format_message(data, signal):\n    symbol = state[\"symbol\"]\n    arrow  = \"🔺\" if data[\"change\"] >= 0 else \"🔻\"\n    now    = datetime.now().strftime(\"%H:%M:%S %d/%m/%Y\")\n    return (\n        f\"🤖 *BTC PRICE BOT*\\n\"\n        f\"━━━━━━━━━━━━━━━━━━━\\n\"\n        f\"💰 *{symbol}*: `${data['price']:,.2f}`\\n\"\n        f\"{arrow} Thay doi 24h: `{data['change']:+.2f}%`\\n\"\n        f\"📈 Cao nhat: `${data['high']:,.2f}`\\n\"",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "def main():\n    print(\"Bot dang khoi dong...\")\n    app = Application.builder().token(TOKEN).build()\n    app.add_handler(CommandHandler(\"start\",      cmd_start))\n    app.add_handler(CommandHandler(\"price\",      cmd_price))\n    app.add_handler(CommandHandler(\"start_auto\", cmd_start_auto))\n    app.add_handler(CommandHandler(\"stop_auto\",  cmd_stop_auto))\n    app.add_handler(CommandHandler(\"symbol\",     cmd_symbol))\n    app.add_handler(CommandHandler(\"alert\",      cmd_alert))\n    app.add_handler(CommandHandler(\"status\",     cmd_status))",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "CHAT_ID",
+        "kind": 5,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "CHAT_ID = os.getenv(\"TELEGRAM_CHAT_ID\")\nexchange = ccxt.binance()\n# ─── LƯU TRẠNG THÁI BOT ─────────────────────────────────────\nstate = {\n    \"is_running\":    False,\n    \"symbol\":        \"BTC/USDT\",\n    \"interval\":      10,\n    \"alert_pct\":     2.0,\n    \"price_history\": [],\n    \"last_price\":    None,",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "exchange = ccxt.binance()\n# ─── LƯU TRẠNG THÁI BOT ─────────────────────────────────────\nstate = {\n    \"is_running\":    False,\n    \"symbol\":        \"BTC/USDT\",\n    \"interval\":      10,\n    \"alert_pct\":     2.0,\n    \"price_history\": [],\n    \"last_price\":    None,\n    \"task\":          None,",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "test lấy giá BTC ccxt",
+        "description": "test lấy giá BTC ccxt",
+        "peekOfCode": "state = {\n    \"is_running\":    False,\n    \"symbol\":        \"BTC/USDT\",\n    \"interval\":      10,\n    \"alert_pct\":     2.0,\n    \"price_history\": [],\n    \"last_price\":    None,\n    \"task\":          None,\n}\n# ─── HÀM LẤY GIÁ ────────────────────────────────────────────",
+        "detail": "test lấy giá BTC ccxt",
+        "documentation": {}
+    },
+    {
+        "label": "tinh_tong",
+        "kind": 2,
+        "importPath": "text",
+        "description": "text",
+        "peekOfCode": "def tinh_tong(a, b):\n    return a + b\nkq = tinh_tong(5, 3) # kq = 8\nprint(str(kq) + \" là kết quả của phép tính tổng\")\nprint(str(kq) + \" là ngon luôn\")\nimport math\nnumber=2.7\nprint(math.ceil(number)) # làm tròn lên\nprint(math.floor(number)) # làm tròn xuống\nprint(math.floor(number))# làm gì thì làm",
+        "detail": "text",
+        "documentation": {}
+    },
+    {
+        "label": "kq",
+        "kind": 5,
+        "importPath": "text",
+        "description": "text",
+        "peekOfCode": "kq = tinh_tong(5, 3) # kq = 8\nprint(str(kq) + \" là kết quả của phép tính tổng\")\nprint(str(kq) + \" là ngon luôn\")\nimport math\nnumber=2.7\nprint(math.ceil(number)) # làm tròn lên\nprint(math.floor(number)) # làm tròn xuống\nprint(math.floor(number))# làm gì thì làm\nprint(math.sqrt(16)) # căn bậc 2 của 16 là 4",
+        "detail": "text",
+        "documentation": {}
+    },
+    {
+        "label": "translate",
+        "kind": 2,
+        "importPath": "translate",
+        "description": "translate",
+        "peekOfCode": "def translate(text):\n    translations = \"\"\n    for char in text:\n        if char.lower() in \"áàảãạắằẳẵặâấầẩẫậ\":\n            if char.isupper():\n                translations = translations + \"A\"\n            else:\n                translations = translations + \"a\"\n        else:\n            translations = translations + char",
+        "detail": "translate",
+        "documentation": {}
+    },
+    {
+        "label": "save_to_csv",
+        "kind": 2,
+        "importPath": "Tự viết bot 1",
+        "description": "Tự viết bot 1",
+        "peekOfCode": "def save_to_csv(symbol, price, change):\n    \"\"\"Hàm lưu dữ liệu vào file CSV\"\"\"\n    data = {\n        'Time': [time.strftime('%Y-%m-%d %H:%M:%S')], # Lấy giờ hiện tại\n        'Symbol': [symbol],\n        'Price': [price],\n        'Change (%)': [round(change, 2)]\n    }\n    df = pd.DataFrame(data)\n    # Nếu file chưa tồn tại, ghi cả tiêu đề (header). Nếu có rồi, chỉ ghi thêm dòng mới (append)",
+        "detail": "Tự viết bot 1",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_prices",
+        "kind": 2,
+        "importPath": "Tự viết bot 1",
+        "description": "Tự viết bot 1",
+        "peekOfCode": "def initialize_prices():\n    print(\"--- Thiết lập giá gốc ---\")\n    for coin in watchlist:\n        ticker = exchange.fetch_ticker(coin)\n        base_prices[coin] = ticker['last']\n    print(\"Đã xong!\")\n# --- VÒNG LẶP CHÍNH ---\ninitialize_prices()\nwhile True:\n    try:",
+        "detail": "Tự viết bot 1",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "Tự viết bot 1",
+        "description": "Tự viết bot 1",
+        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\nwatchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}\nfile_name = \"trading_alerts.csv\" # Tên file sẽ lưu\ndef save_to_csv(symbol, price, change):\n    \"\"\"Hàm lưu dữ liệu vào file CSV\"\"\"\n    data = {\n        'Time': [time.strftime('%Y-%m-%d %H:%M:%S')], # Lấy giờ hiện tại\n        'Symbol': [symbol],\n        'Price': [price],",
+        "detail": "Tự viết bot 1",
+        "documentation": {}
+    },
+    {
+        "label": "watchlist",
+        "kind": 5,
+        "importPath": "Tự viết bot 1",
+        "description": "Tự viết bot 1",
+        "peekOfCode": "watchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}\nfile_name = \"trading_alerts.csv\" # Tên file sẽ lưu\ndef save_to_csv(symbol, price, change):\n    \"\"\"Hàm lưu dữ liệu vào file CSV\"\"\"\n    data = {\n        'Time': [time.strftime('%Y-%m-%d %H:%M:%S')], # Lấy giờ hiện tại\n        'Symbol': [symbol],\n        'Price': [price],\n        'Change (%)': [round(change, 2)]",
+        "detail": "Tự viết bot 1",
+        "documentation": {}
+    },
+    {
+        "label": "base_prices",
+        "kind": 5,
+        "importPath": "Tự viết bot 1",
+        "description": "Tự viết bot 1",
+        "peekOfCode": "base_prices = {}\nfile_name = \"trading_alerts.csv\" # Tên file sẽ lưu\ndef save_to_csv(symbol, price, change):\n    \"\"\"Hàm lưu dữ liệu vào file CSV\"\"\"\n    data = {\n        'Time': [time.strftime('%Y-%m-%d %H:%M:%S')], # Lấy giờ hiện tại\n        'Symbol': [symbol],\n        'Price': [price],\n        'Change (%)': [round(change, 2)]\n    }",
+        "detail": "Tự viết bot 1",
+        "documentation": {}
+    },
+    {
+        "label": "file_name",
+        "kind": 5,
+        "importPath": "Tự viết bot 1",
+        "description": "Tự viết bot 1",
+        "peekOfCode": "file_name = \"trading_alerts.csv\" # Tên file sẽ lưu\ndef save_to_csv(symbol, price, change):\n    \"\"\"Hàm lưu dữ liệu vào file CSV\"\"\"\n    data = {\n        'Time': [time.strftime('%Y-%m-%d %H:%M:%S')], # Lấy giờ hiện tại\n        'Symbol': [symbol],\n        'Price': [price],\n        'Change (%)': [round(change, 2)]\n    }\n    df = pd.DataFrame(data)",
+        "detail": "Tự viết bot 1",
+        "documentation": {}
+    },
+    {
+        "label": "i",
+        "kind": 5,
+        "importPath": "white",
+        "description": "white",
+        "peekOfCode": "i = 1\nwhile i < 10:\n    print(\"meo meo\")\n    i += 1\nprint(\" Được rồi, tôi cho bạn ăn đây\")",
+        "detail": "white",
+        "documentation": {}
+    }
+]
