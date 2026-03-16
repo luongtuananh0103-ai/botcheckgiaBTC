@@ -255,6 +255,51 @@
         "documentation": {}
     },
     {
+        "label": "initialize_prices",
+        "kind": 2,
+        "importPath": "BTC_price_ver2",
+        "description": "BTC_price_ver2",
+        "peekOfCode": "def initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")\n        except ccxt.NetworkError:                         # ← Lỗi mạng\n            print(f\"Lỗi mạng khi lấy giá {coin}, thử lại...\")",
+        "detail": "BTC_price_ver2",
+        "documentation": {}
+    },
+    {
+        "label": "check_alert",
+        "kind": 2,
+        "importPath": "BTC_price_ver2",
+        "description": "BTC_price_ver2",
+        "peekOfCode": "def check_alert(symbol, current_price):\n    \"\"\"Hàm tính toán % thay đổi và đưa ra cảnh báo\"\"\"\n    base_price = base_prices[symbol]\n    # Công thức tính % thay đổi: ((Giá mới - Giá cũ) / Giá cũ) * 100\n    change_pct = ((current_price - base_price) / base_price) * 100\n    if abs(change_pct) >= 3:\n        status = \"🚀 TĂNG\" if change_pct > 0 else \"🔥 GIẢM\"\n        print(f\"⚠️ CẢNH BÁO: {symbol} đang {status} {change_pct:.2f}% (Giá gốc: {base_price})\")\n    else:\n        print(f\"{symbol}: {current_price} (Biến động: {change_pct:.2f}%)\")",
+        "detail": "BTC_price_ver2",
+        "documentation": {}
+    },
+    {
+        "label": "exchange",
+        "kind": 5,
+        "importPath": "BTC_price_ver2",
+        "description": "BTC_price_ver2",
+        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\n# 1. Danh sách theo dõi và lưu giá gốc (Mốc so sánh)\nwatchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)",
+        "detail": "BTC_price_ver2",
+        "documentation": {}
+    },
+    {
+        "label": "watchlist",
+        "kind": 5,
+        "importPath": "BTC_price_ver2",
+        "description": "BTC_price_ver2",
+        "peekOfCode": "watchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")",
+        "detail": "BTC_price_ver2",
+        "documentation": {}
+    },
+    {
+        "label": "base_prices",
+        "kind": 5,
+        "importPath": "BTC_price_ver2",
+        "description": "BTC_price_ver2",
+        "peekOfCode": "base_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")\n        except ccxt.NetworkError:                         # ← Lỗi mạng",
+        "detail": "BTC_price_ver2",
+        "documentation": {}
+    },
+    {
         "label": "secret_word",
         "kind": 5,
         "importPath": "Bài 20- Trò chơi đoán từ",
@@ -324,6 +369,24 @@
         "description": "Calculator",
         "peekOfCode": "operator = input(\"Nhập phép toán (+, -, *, /): \")\ntry:\n    if operator == \"+\":\n        print(num1 + num2)\n    elif operator == \"-\":\n        print(num1 - num2)\n    elif operator == \"*\":\n        print(num1 * num2)\n    elif operator == \"/\":\n        if num2 != 0:",
         "detail": "Calculator",
+        "documentation": {}
+    },
+    {
+        "label": "Car",
+        "kind": 6,
+        "importPath": "car",
+        "description": "car",
+        "peekOfCode": "class Car:\n    def __init__(self, make, model, year):\n        self.make = make\n        self.model = model\n        self.year = year\n    def drive(self):\n       print(f\"Bạn đang lái chiếc xe {self.make} {self.model} Model năm {self.year}\")\nMercedes = Car(\"Mercedes\", \"C300\", 2020)\nMercedes.drive()",
+        "detail": "car",
+        "documentation": {}
+    },
+    {
+        "label": "Mercedes",
+        "kind": 5,
+        "importPath": "car",
+        "description": "car",
+        "peekOfCode": "Mercedes = Car(\"Mercedes\", \"C300\", 2020)\nMercedes.drive()",
+        "detail": "car",
         "documentation": {}
     },
     {
@@ -534,48 +597,12 @@
         "documentation": {}
     },
     {
-        "label": "initialize_prices",
-        "kind": 2,
-        "importPath": "Lấy giá BTC ver2",
-        "description": "Lấy giá BTC ver2",
-        "peekOfCode": "def initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")\n        except ccxt.NetworkError:                         # ← Lỗi mạng\n            print(f\"Lỗi mạng khi lấy giá {coin}, thử lại...\")",
-        "detail": "Lấy giá BTC ver2",
-        "documentation": {}
-    },
-    {
-        "label": "check_alert",
-        "kind": 2,
-        "importPath": "Lấy giá BTC ver2",
-        "description": "Lấy giá BTC ver2",
-        "peekOfCode": "def check_alert(symbol, current_price):\n    \"\"\"Hàm tính toán % thay đổi và đưa ra cảnh báo\"\"\"\n    base_price = base_prices[symbol]\n    # Công thức tính % thay đổi: ((Giá mới - Giá cũ) / Giá cũ) * 100\n    change_pct = ((current_price - base_price) / base_price) * 100\n    if abs(change_pct) >= 3:\n        status = \"🚀 TĂNG\" if change_pct > 0 else \"🔥 GIẢM\"\n        print(f\"⚠️ CẢNH BÁO: {symbol} đang {status} {change_pct:.2f}% (Giá gốc: {base_price})\")\n    else:\n        print(f\"{symbol}: {current_price} (Biến động: {change_pct:.2f}%)\")",
-        "detail": "Lấy giá BTC ver2",
-        "documentation": {}
-    },
-    {
-        "label": "exchange",
-        "kind": 5,
-        "importPath": "Lấy giá BTC ver2",
-        "description": "Lấy giá BTC ver2",
-        "peekOfCode": "exchange = ccxt.binance({'enableRateLimit': True})\n# 1. Danh sách theo dõi và lưu giá gốc (Mốc so sánh)\nwatchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)",
-        "detail": "Lấy giá BTC ver2",
-        "documentation": {}
-    },
-    {
-        "label": "watchlist",
-        "kind": 5,
-        "importPath": "Lấy giá BTC ver2",
-        "description": "Lấy giá BTC ver2",
-        "peekOfCode": "watchlist = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']\nbase_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")",
-        "detail": "Lấy giá BTC ver2",
-        "documentation": {}
-    },
-    {
-        "label": "base_prices",
-        "kind": 5,
-        "importPath": "Lấy giá BTC ver2",
-        "description": "Lấy giá BTC ver2",
-        "peekOfCode": "base_prices = {}  # Nơi lưu giá lúc bắt đầu chạy bot\ndef initialize_prices():\n    \"\"\"Lấy giá khởi điểm cho tất cả coin trong watchlist\"\"\"\n    print(\"--- Đang thiết lập giá gốc ---\")\n    for coin in watchlist:\n        try:                                              # ← THÊM\n            ticker = exchange.fetch_ticker(coin)\n            base_prices[coin] = ticker['last']\n            print(f\"{coin}: {base_prices[coin]}\")\n        except ccxt.NetworkError:                         # ← Lỗi mạng",
-        "detail": "Lấy giá BTC ver2",
+        "label": "Quiz",
+        "kind": 6,
+        "importPath": "Multi_choin",
+        "description": "Multi_choin",
+        "peekOfCode": "class Quiz:\n    def __init__(self, questions):\n        self.questions = questions\n    def display_questions(self):\n        for question in self.questions:\n            print(question)",
+        "detail": "Multi_choin",
         "documentation": {}
     },
     {
@@ -603,6 +630,69 @@
         "description": "my_age=35",
         "peekOfCode": "text = \"Năm nay tôi {} tuổi, vợ tôi {} tuổi.\" \nprint(text.format(my_age, my_wife_age))",
         "detail": "my_age=35",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "kind": 5,
+        "importPath": "quiz",
+        "description": "quiz",
+        "peekOfCode": "Question = [\n    \"Câu 1. Đội bóng nào về nhì tại World Cup 2022?\" \\nA. Brazil \\nB. Pháp \\nC. Argentina \\nD. Đức\",\n    \"Câu 2. Ai là cầu thủ ghi nhiều bàn thắng nhất tại World Cup 2022?\" \\nA. Lionel Messi \\nB. Kylian Mbappé \\nC. Cristiano Ronaldo \\nD. Neymar\",\n    \"Câu 3. Đội bóng nào đã về nhì tại World Cup 2022?\" \\nA. Brazil \\nB. Pháp \\nC. Argentina \\nD. Đức\",\n]",
+        "detail": "quiz",
+        "documentation": {}
+    },
+    {
+        "label": "phone_book",
+        "kind": 5,
+        "importPath": "read",
+        "description": "read",
+        "peekOfCode": "phone_book = open(\"phone_book.txt\", \"r\", encoding=\"utf-8\")\nfor person in phone_book:\n    print(person.replace(\"\\n\", \"\"))\nphone_book.close()\n# Them dữ liệu vào file .txt trong phone_book\nphone_book = open(\"new_phone_book.txt\", \"a\", encoding=\"utf-8\")\nphone_book.write(\"Nguyễn Văn A -- 01234566543\\n\")\nphone_book.write(\"Trần Thị B -- 0987654321\\n\")\nphone_book.close()",
+        "detail": "read",
+        "documentation": {}
+    },
+    {
+        "label": "phone_book",
+        "kind": 5,
+        "importPath": "read",
+        "description": "read",
+        "peekOfCode": "phone_book = open(\"new_phone_book.txt\", \"a\", encoding=\"utf-8\")\nphone_book.write(\"Nguyễn Văn A -- 01234566543\\n\")\nphone_book.write(\"Trần Thị B -- 0987654321\\n\")\nphone_book.close()",
+        "detail": "read",
+        "documentation": {}
+    },
+    {
+        "label": "student",
+        "kind": 6,
+        "importPath": "student",
+        "description": "student",
+        "peekOfCode": "class student:\n    def __init__(self, name, age, grade):\n        self.name = name\n        self.age = age\n        self.grade = grade\n        pass\n    def study(self):\n        print(f\"{self.name} đang học bài\")\n    def play(self):\n        print(f\"{self.name} đang chơi\")",
+        "detail": "student",
+        "documentation": {}
+    },
+    {
+        "label": "coin",
+        "kind": 6,
+        "importPath": "student",
+        "description": "student",
+        "peekOfCode": "class coin:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n    def update_price(self, new_price):\n        self.price = new_price\n        print(f\"Giá của {self.name} đã được cập nhật: {self.price}\")\nBTC = coin(\"Bitcoin\", 50000)\nBTC.update_price(55000)",
+        "detail": "student",
+        "documentation": {}
+    },
+    {
+        "label": "student1",
+        "kind": 5,
+        "importPath": "student",
+        "description": "student",
+        "peekOfCode": "student1 = student(\"Nguyen Van A\", 20, \"A\")\nstudent2= student(\"Nguyen Van B\", 17, \"A\")\nstudent1.study()\nstudent2.play()\nclass coin:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n    def update_price(self, new_price):\n        self.price = new_price",
+        "detail": "student",
+        "documentation": {}
+    },
+    {
+        "label": "BTC",
+        "kind": 5,
+        "importPath": "student",
+        "description": "student",
+        "peekOfCode": "BTC = coin(\"Bitcoin\", 50000)\nBTC.update_price(55000)",
+        "detail": "student",
         "documentation": {}
     },
     {
